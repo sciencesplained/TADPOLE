@@ -1,0 +1,49 @@
+/* Basic tweaks on top of Pico CSS */
+
+.hero {
+  padding: 3rem 0 2rem;
+}
+
+.hero.small {
+  padding: 2rem 0 1rem;
+}
+
+.hero .lead {
+  max-width: 60ch;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.button-row a {
+  text-decoration: none;
+}
+
+.container.narrow {
+  max-width: 800px;
+}
+
+.toc {
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid var(--muted-border-color, #ddd);
+  background: var(--muted-background-color, #f9f9f9);
+}
+
+.toc ul {
+  margin-bottom: 0;
+}
+
+.governance {
+  gap: 1.5rem;
+}
+
+footer {
+  margin: 3rem auto 2rem;
+  text-align: center;
+}
