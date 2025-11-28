@@ -10,8 +10,6 @@
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
-
-
 <header class="site-header">
   <div class="container header-inner">
     <div class="logo-block">
@@ -19,21 +17,15 @@
            alt="The TADPOLE Study logo"
            class="logo-img" />
     </div>
-<nav class="main-nav">
-  <button class="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
-    ☰
-  </button>
-
-  <div class="nav-links">
-    <a href="index.html#hero">Home</a>
-    <a href="index.html#video">Video</a>
-    <a href="index.html#pathway">What taking part involves</a>
-    <a href="additional-information.html">Additional information</a>
-    <a href="contact.html">Contact</a>
-    <a href="professionals.html" class="prof-link">For professionals</a>
+    <nav class="main-nav">
+      <a href="index.html#hero">Home</a>
+      <a href="index.html#video">Video</a>
+      <a href="index.html#pathway">What taking part involves</a>
+      <a href="additional-information.html">Additional information</a>
+      <a href="contact.html">Contact</a>
+      <a href="professionals.html" class="prof-link">For professionals</a>
+    </nav>
   </div>
-</nav>
- </div>
 </header>
 
 <main>
@@ -358,75 +350,5 @@ TADPOLE Supplementary Participant Information | V1.0 | 17April25
     </p>
   </div>
 </footer>
-<div class="disclaimer-backdrop" id="disclaimer-modal" aria-hidden="true">
-  <div class="disclaimer-dialog" role="dialog" aria-modal="true" aria-labelledby="disclaimer-title">
-    <h2 id="disclaimer-title">Before you continue</h2>
-    <p>
-      <strong>This is not the official website for the TADPOLE study.</strong><br>
-      The official study website is available here:<br>
-      <a href="https://tadpole.blogs.bristol.ac.uk" target="_blank" rel="noopener">
-        official TADPOLE study site
-      </a>.
-    </p>
-    <p>
-      This site is a portfolio example created by
-      <a href="https://sciencesplained.com" target="_blank" rel="noopener">
-        Sciencesplained.com
-      </a>, specialists in Clinical Trial Media.
-    </p>
-    <p>
-      Any questions? Please contact Adam at
-      <a href="mailto:sciencesplained@gmail.com">sciencesplained@gmail.com</a>.
-    </p>
-
-    <button type="button" id="disclaimer-accept" class="btn-disclaimer">
-      I understand and want to continue
-    </button>
-  </div>
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const STORAGE_KEY = 'tadpoleDisclaimerAccepted';
-    const modal = document.getElementById('disclaimer-modal');
-    const acceptBtn = document.getElementById('disclaimer-accept');
-
-    if (!modal || !acceptBtn) return;
-
-    // Show modal only if not accepted before
-    if (!localStorage.getItem(STORAGE_KEY)) {
-      modal.classList.add('is-visible');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('no-scroll');
-    }
-
-    acceptBtn.addEventListener('click', () => {
-      localStorage.setItem(STORAGE_KEY, 'true');
-      modal.classList.remove('is-visible');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('no-scroll');
-    });
-  });
-</script>
-
-<script>
-  const toggleBtn = document.querySelector('.menu-toggle');
-  const navLinks = document.querySelector('.nav-links');
-
-  if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', () => {
-      const isOpen = navLinks.classList.toggle('open');
-      toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    // Close the menu when any link is clicked
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        toggleBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
-</script>
-
 </body>
 </html>

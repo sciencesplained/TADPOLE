@@ -27,14 +27,6 @@
 html {
   scroll-behavior: smooth;
 }
-a {
-  color: var(--navy);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
 
 body {
   margin: 0;
@@ -157,27 +149,12 @@ a:hover {
   font-size: 0.95rem;
 }
 
-
-.main-nav {
-  display: flex;
-  font-size: 0.95rem;
-  margin-left: auto;   /* pushes nav to the right but keeps some breathing room */
-}
-/* Spread the nav links out on large screens */
-.nav-links {
-  display: flex;
-  gap: 1.75rem;      /* space between each link */
-  align-items: center;
-}
-
-
 .main-nav a {
   text-decoration: none;
   color: var(--navy);
-  font-weight: 500;
-  padding: 0.3rem 0.5rem;
+  font-weight: 600;
+  position: relative;
 }
-
 
 .main-nav a::after {
   content: "";
@@ -193,24 +170,6 @@ a:hover {
 .main-nav a:hover::after {
   width: 100%;
 }
-
-/* Base layout for nav links (desktop) */
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
-
-/* Hamburger button – hidden on desktop by default */
-.menu-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  font-size: 1.4rem;
-  color: var(--navy);
-  cursor: pointer;
-}
-
 
 /* =========
    HERO
@@ -740,10 +699,10 @@ h1 {
   .sites-inner {
     gap: 1.5rem;
   }
-  /* .main-nav {
-    display: none;
-  } */
 
+  .main-nav {
+    display: none; /* hide full nav on narrower screens for now */
+  }
 
   .site-header {
     border-bottom: none;
@@ -846,20 +805,6 @@ h1 {
     max-width: 55%;
   }
 }
-/* Desktop nav styling – good spacing and alignment */
-@media (min-width: 901px) {
-  .main-nav {
-    display: flex;
-    gap: 1.5rem;         /* space BETWEEN links */
-    justify-content: flex-start;  /* move links away from the right edge */
-  }
-
-  .main-nav a {
-    text-decoration: none; /* remove underline */
-    color: var(--navy);     /* set consistent text color */
-    font-weight: 500;
-  }
-}
 
 /* On mobile, let them go full width (but not overwhelming) */
 @media (max-width: 700px) {
@@ -867,248 +812,3 @@ h1 {
     max-width: 100%;
   }
 }
-/* MOBILE NAVIGATION — stack links and make them visible and tappable */
-@media (max-width: 800px) {
-
-  .main-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
-    width: 100%;
-    padding-top: 0.5rem;
-    border-top: 1px solid rgba(0,0,0,0.05);
-  }
-
-  .main-nav a {
-    display: block;
-    width: 100%;
-    padding: 0.6rem 0;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-    font-size: 1rem;
-  }
-
-  .main-nav a.prof-link {
-    align-self: stretch;
-    text-align: center;
-    margin-top: 0.5rem;
-    border-radius: 999px;
-  }
-
-  .header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* Map section: stack content on mobile */
-@media (max-width: 900px) {
-  .sites-inner {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sites-map-frame {
-    width: 100%;
-    aspect-ratio: 3 / 2; /* make it readable */
-  }
-}
-/* Stack download cards on phones/tablets */
-@media (max-width: 900px) {
-  .downloads-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .download-card,
-  .download-card a {
-    width: 100%;
-  }
-}
-@media (max-width: 900px) {
-  .faq-grid,
-  .stats-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-/* Hide toggle button on desktop */
-.menu-toggle {
-  display: none;
-  background: var(--navy);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  font-size: 1rem;
-  cursor: pointer;
-  border: none;
-}
-
-/* Mobile menu behavior */
-@media (max-width: 900px) {
-/* === Hamburger Button Styling (Better Mobile Placement) === */
-.menu-toggle {
-  display: none; /* Hidden on desktop */
-  background: var(--navy);
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1rem;
-  cursor: pointer;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  z-index: 2000;
-}
-
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    gap: 0.5rem;
-    width: 100%;
-    background: white;
-    padding: 1rem 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
-  }
-
-  /* When menu is open (JS adds .open class) */
-  .nav-links.open {
-    display: flex;
-  }
-
-  /* Style mobile links */
-  .nav-links a {
-    padding: 0.5rem 0;
-    width: 100%;
-    display: block;
-  }
-}
-/* Mobile-friendly nav without changing the overall style */
-@media (max-width: 900px) {
-  .header-inner {
-    flex-wrap: wrap;
-    gap: 0.75rem;
-  }
-
-  .main-nav {
-    display: flex;          /* override any earlier value */
-    flex-wrap: wrap;        /* let links wrap onto multiple lines */
-    justify-content: flex-end;
-    font-size: 0.9rem;
-  }
-
-  .main-nav a {
-    padding: 0.25rem 0;     /* slightly tighter vertically on small screens */
-  }
-}
-/* ========== MOBILE NAV BEHAVIOUR ========== */
-@media (max-width: 900px) {
-  .main-nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-
-  /* Show hamburger on mobile */
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-
-  /* Hide links by default on mobile, turn into dropdown */
-  .nav-links {
-    display: none;
-    position: absolute;
-    top: 2.5rem;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    background: #ffffff;
-    padding: 0.75rem 1rem;
-    border-radius: 0.75rem;
-    box-shadow: 0 8px 20px rgba(19, 35, 65, 0.18);
-    min-width: 220px;
-    z-index: 30;
-  }
-
-  /* When menu is open */
-  .nav-links.open {
-    display: flex;
-  }
-
-  /* Links inside the dropdown */
-  .nav-links a {
-    width: 100%;
-    padding: 0.35rem 0;
-  }
-}
-/* ===== POPUP DISCLAIMER MODAL ===== */
-
-.no-scroll {
-  overflow: hidden;
-}
-
-.disclaimer-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(10, 10, 20, 0.45);
-  display: none;                  /* hidden by default */
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;                  /* above header/menu */
-}
-
-.disclaimer-backdrop.is-visible {
-  display: flex;
-}
-
-.disclaimer-dialog {
-  background: #ffffff;
-  max-width: 480px;
-  margin: 1.5rem;
-  padding: 2rem 2.25rem;
-  border-radius: 1.1rem;
-  box-shadow: 0 18px 40px rgba(19, 35, 65, 0.25);
-  text-align: left;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: var(--navy);
-}
-
-.disclaimer-dialog h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-
-.disclaimer-dialog a {
-  color: var(--green-frog);
-  font-weight: 600;
-}
-
-.disclaimer-dialog a:hover {
-  text-decoration: underline;
-}
-
-/* Button inside modal */
-.btn-disclaimer {
-  margin-top: 1.5rem;
-  background: var(--green-frog);
-  color: #ffffff;
-  border: none;
-  border-radius: 999px;
-  padding: 0.6rem 1.4rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.btn-disclaimer:hover {
-  filter: brightness(0.95);
-}
-
